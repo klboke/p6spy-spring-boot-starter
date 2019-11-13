@@ -24,7 +24,6 @@ p6spy.config.logMessageFormat = com.p6spy.engine.spy.appender.CustomLineFormat
 p6spy.config.customLogMessageFormat = executionTime:%(executionTime)| 执行sql:%(sqlSingleLine)
 ```
 > By default import dependency, p6spy auto assembly will take effect, you can turn it off by "p6spy.config.enabled = false"
-
-
-
-More configurations are available：https://p6spy.readthedocs.io/en/latest/configandusage.html
+## Configuration description
+- "Spring-configuration-metadata.json" has been added to the configuration description, and IDEA has good configuration tips
+- More configurations are available：https://p6spy.readthedocs.io/en/latest/configandusage.html
