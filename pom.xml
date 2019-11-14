@@ -8,6 +8,7 @@
     <artifactId>p6spy-spring-boot-starter</artifactId>
     <version>1.0</version>
     <description>快速集成p6spy的spring boot starter</description>
+    <name>p6spy-spring-boot-starter</name>
 
     <properties>
         <spring-boot.version>2.2.0.RELEASE</spring-boot.version>
@@ -20,6 +21,7 @@
     <scm>
         <developerConnection>http://www.kailing.pub/</developerConnection>
         <url>https://github.com/klboke/p6spy-spring-boot-starter.git</url>
+        <connection>scm:git:git@github.com:klboke/p6spy-spring-boot-starter.git</connection>
     </scm>
     <issueManagement>
         <system>GitHub Issues</system>
@@ -88,6 +90,25 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                            <encoding>UTF-8</encoding>
+                            <charset>UTF-8</charset>
+                            <docencoding>UTF-8</docencoding>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <executions>
                     <execution>
@@ -110,6 +131,20 @@
                         <exclude>org.springframework.boot:spring-boot-starter-tomcat</exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
